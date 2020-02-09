@@ -4,20 +4,20 @@
 
     //% color=50 weight=11
     //% icon="\uf1eb"
-declare namespace maqueenIR {
+declare namespace maqueen_MBOT_IR {
 
     /**
-     * button pushed.
+     *  Lorsque le bouton de la telecommande du robot mbot est appuyé. Attention à initialiser le port du recepteur infrarouge.
      */
     //% blockId=ir_received_left_event
-    //% block="on |%btn| button pressed" shim=maqueenIR::onPressEvent
+    //% block="Lorsque le signal du bouton |%btn| de la télécommande est reçu" shim=maqueenIR::onPressEvent
     function onPressEvent(btn: RemoteButton, body: () => void): void;
 
     /**
-     * initialises local variablesssss
+     * initialiser infrarouge du robot maqueen sur P16
      */
     //% blockId=ir_init
-    //% block="connect ir receiver to %pin" shim=maqueenIR::initIR
+    //% block="initialiser le capteur infrarouge sur %pin" shim=maqueenIR::initIR
     function initIR(pin: Pins): void;
 }
 
