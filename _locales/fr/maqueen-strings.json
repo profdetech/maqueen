@@ -1,7 +1,7 @@
 {
   "maqueen.Dir.CCW|block": "reculer",
   "maqueen.Dir.CW|block": "avancer",
-  "maqueen.IR_callbackUser|block": "quand l'Infrarouge reçoit, écrire dans la variable",
+  "maqueen.IR_callbackUser|block": "Quand l'Infrarouge reçoit un signal, écrire dans la variable",
   "maqueen.IR_read_version|block": "Obtenir des informations sur le produit",
   "maqueen.IR_read|block": "lire la valeur reçue par infrarouge",
   "maqueen.LED.LEDLeft|block": "LED_rouge_Gauche",
@@ -20,6 +20,6 @@
   "maqueen.motorStopAll|block": "Stop tous les moteurs",
   "maqueen.motorStop|block": "Stop le moteur|%motors",
   "maqueen.readPatrol|block": "Lire détecteur|%patrol",
-  "maqueen.Ultrasonic|block": "lire la valeur du capteur ultrason - unité du senseur|%unit",
-  "maqueen.writeLED|block": "%ledswitch| |%led"
+  "maqueen.Ultrasonic|block": "lire la valeur du capteur ultrason - unité|%unit",
+  "maqueen.writeLED|block": "%ledswitch|action:|%led"
 } 
