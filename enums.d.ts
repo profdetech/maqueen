@@ -2,52 +2,34 @@
 
 
     declare const enum Pins {
-    P0 = 3,
-    P1 = 2,
-    P2 = 1,
-    P3 = 4,
-    P4 = 5,
-    P5 = 17,
-    P6 = 12,
-    P7 = 11,
-    P8 = 18,
-    P9 = 10,
-    P10 = 6,
-    P11 = 26,
-    P12 = 20,
-    P13 = 23,
-    P14 = 22,
-    P15 = 21,
-    P16 = 16,
-    P19 = 0,
-    P20 = 30,
+    P16 = 16
     }
 
 
     declare const enum RemoteButton {
-    Power = 0x00,
-    VolUp = 0x01,
-    FuncStop = 0x02,
-    LeftTwo = 0x04,
-    Suspended = 0x05,
-    RightTwo = 0x06,
-    Down = 0x08,
-    VolDown = 0x09,
-    Up = 0x0a,
-    Zero = 0x0c,
-    EQ = 0x0d,
-    StRept = 0x0e,
-    One = 0x10,
-    Two = 0x11,
-    Three = 0x12,
-    Four = 0x14,
-    Five = 0x15,
-    Six = 0x16,
-    Seven = 0x18,
-    Eight = 0x19,
-    Nine = 0x1a,
+    A= 0x45,
+	B= 0x46,
+	C= 0x47,
+	D= 0x44,
+	E= 0x43,
+	F= 0xD,
+    Haut = 0x40,
+    Gauche = 0x7,
+    Bas = 0x19,
+    Droite = 0x9,
+	Parametre = 0x15,
+	Touche_0 = 0x16,
+	Touche_1 = 0xC,
+	Touche_2 = 0x18,
+	Touche_3 = 0x5E,
+	Touche_4 = 0x8,
+	Touche_5 = 0x1C,
+	Touche_6 = 0x5A,
+	Touche_7 = 0x42,
+	Touche_8 = 0x52,
+	Touche_9 = 0x4A,
     }
-declare namespace maqueenIR {
+declare namespace maqueen_MBOT_IR {
 }
 
 // Auto-generated. Do not edit. Really.
