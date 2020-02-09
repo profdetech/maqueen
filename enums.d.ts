@@ -2,7 +2,7 @@
 
 
     declare const enum Pins {
-    P16 = 16
+    P16 = 16,
     }
 
 
