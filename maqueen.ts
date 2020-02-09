@@ -116,30 +116,14 @@ namespace maqueen {
         });
     }
 	/**
-	 A= 45,
-	B= 46,
-	C= 47,
-	D= 44,
-	E= 43,
-	F= D,
-    Haut = 40,
-    Gauche = 7,
-    Bas = 19,
-    Droite = 9,
-	Parametre = 15,
-	Touche_0 = 16,
-	Touche_1 = C,
-	Touche_2 = 18,
-	Touche_3 = 5E,
-	Touche_4 = 8,
-	Touche_5 = 1C,
-	Touche_6 = 5A,
-	Touche_7 = 42,
-	Touche_8 = 52,
-	Touche_9 = 4A,
+	* A= 45,B= 46,C= 47,D= 44,E= 43,F= D,
+	*Haut = 40,Gauche = 7,Bas = 19,Droite = 9,Parametre = 15,
+	*Touche_0 = 16,Touche_1 = C,Touche_2 = 18,Touche_3 = 5E,
+	*Touche_4 = 8,Touche_5 = 1C,Touche_6 = 5A,Touche_7 = 42,
+	*Touche_8 = 52,Touche_9 = 4A,
 	 */
     //% blockId=IR_descriptif
-    //% block="Descriptif des codes Infrarouge de la télécommande Mbot"
+    //% block="Descriptif en commentaire des codes Infrarouge de la télécommande Mbot"
 	//% weight=10
     export function IR_descriptif(): void {
     }
