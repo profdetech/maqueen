@@ -55,7 +55,7 @@ enum class RemoteButton {
 
 //% color=50 weight=11
 //% icon="\uf1eb"
-namespace maqueenIR { 
+namespace maqueen_MBOT_IR { 
   map<RemoteButton, vA> actions;
   map<RemoteButton, uint32_t> lastact;
   Timer tsb; 
@@ -65,6 +65,8 @@ namespace maqueenIR {
   RemoteIR::Format fmt = RemoteIR::UNKNOWN;
   int msg;
   int IRcallbackNum;
+
+
 
   /**
   * button pushed.
@@ -180,10 +182,10 @@ namespace maqueenIR {
   }
 
   /**
-  * initialises local variablesssss
+  * initialiser infrarouge du robot maqueen sur P16
   */
   //% blockId=ir_init
-  //% block="connect ir receiver to %pin"
+  //% block="initialiser le capteur infrarouge sur %pin"
   void initIR(Pins pin){
     rx = new ReceiverIR((PinName)pin);
     tsb.start(); //interrupt timer for debounce
