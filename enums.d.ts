@@ -29,7 +29,7 @@
 	Touche_8 = 0x52,
 	Touche_9 = 0x4A,
     }
-declare namespace maqueen_MBOT_IR {
+declare namespace maqueenIR {
 }
 
 // Auto-generated. Do not edit. Really.
