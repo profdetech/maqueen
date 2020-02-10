@@ -14,12 +14,6 @@
         "ReceiverIR.cpp",
         "ReceiverIR.h",
         "RemoteIR.h",
-        "_locales/zh-cn/maqueen-strings.json",
-        "_locales/zh-tw/maqueen-strings.json",
-        "_locales/pt/maqueen-strings.json",
-        "_locales/jp/maqueen-strings.json",
-        "_locales/fr/maqueen-strings.json",
-        "_locales/es/maqueen-strings.json",
         "shims.d.ts",
         "README.md"
     ],
