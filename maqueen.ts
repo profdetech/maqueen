@@ -36,11 +36,11 @@ namespace maqueen {
     }
 
     export enum Motors {
-        //% blockId="left motor" block="Gauche"
+        //% blockId="left motor" block="Moteur gauche"
         M1 = 0,
-        //% blockId="right motor" block="Droit"
+        //% blockId="right motor" block="Moteur droit"
         M2 = 1,
-        //% blockId="all motor" block="Les_deux_moteurs"
+        //% blockId="all motor" block="Les deux moteurs"
         All = 2
     }
 
