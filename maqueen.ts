@@ -36,11 +36,11 @@ namespace maqueen {
     }
 
     export enum Motors {
-        //% blockId="left motor" block="left"
+        //% blockId="left motor" block="Gauche"
         M1 = 0,
-        //% blockId="right motor" block="right"
+        //% blockId="right motor" block="Droit"
         M2 = 1,
-        //% blockId="all motor" block="all"
+        //% blockId="all motor" block="Les_deux_moteurs"
         All = 2
     }
 
@@ -52,39 +52,39 @@ namespace maqueen {
     }
 
     export enum Dir {
-        //% blockId="CW" block="Forward"
+        //% blockId="CW" block="avancer"
         CW = 0x0,
-        //% blockId="CCW" block="Backward"
+        //% blockId="CCW" block="reculer"
         CCW = 0x1
     }
 
     export enum Patrol {
-        //% blockId="patrolLeft" block="left"
+        //% blockId="patrolLeft" block="gauche"
         PatrolLeft = 13,
-        //% blockId="patrolRight" block="right"
+        //% blockId="patrolRight" block="droit"
         PatrolRight = 14
     }
 
     export enum LED {
-        //% blockId="LEDLeft" block="left"
+        //% blockId="LEDLeft" block="gauche"
         LEDLeft = 8,
-        //% blockId="LEDRight" block="right"
+        //% blockId="LEDRight" block="droit"
         LEDRight = 12
     }
 
     export enum LEDswitch {
-        //% blockId="turnOn" block="ON"
+        //% blockId="turnOn" block="allumée"
         turnOn = 0x01,
-        //% blockId="turnOff" block="OFF"
+        //% blockId="turnOff" block="éteinte"
         turnOff = 0x00
     }
 
-    //% advanced=true shim=maqueenIR::initIR
+    //% advanced=true shim=maqueen_MBOT_IR::initIR
     function initIR(pin: Pins): void {
         return
     }
 
-    //% advanced=true shim=maqueenIR::onPressEvent
+    //% advanced=true shim=maqueen_MBOT_IR::onPressEvent
     function onPressEvent(btn: RemoteButton, body: Action): void {
         return
     }
@@ -104,7 +104,7 @@ namespace maqueen {
 
     //% weight=100
     //% blockGap=50
-    //% blockId=IR_callbackUser block="on IR received"
+    //% blockId=IR_callbackUser block="Quand l'Infrarouge reçoit un signal, écrire dans la variable"
     export function IR_callbackUser(maqueencb: (message: number) => void) {
         maqueenInit();
         IR_callback(() => {
@@ -117,10 +117,10 @@ namespace maqueen {
     }
 	/**
 	* A= 45,B= 46,C= 47,D= 44,E= 43,F= D,
-	*Haut = 40,Gauche = 7,Bas = 19,Droite = 9,Parametre = 15,
-	*Touche_0 = 16,Touche_1 = C,Touche_2 = 18,Touche_3 = 5E,
-	*Touche_4 = 8,Touche_5 = 1C,Touche_6 = 5A,Touche_7 = 42,
-	*Touche_8 = 52,Touche_9 = 4A,
+	* Haut = 40,Gauche = 7,Bas = 19,Droite = 9,Parametre = 15,
+	* Touche_0 = 16,Touche_1 = C,Touche_2 = 18,Touche_3 = 5E,
+	* Touche_4 = 8,Touche_5 = 1C,Touche_6 = 5A,Touche_7 = 42,
+	* Touche_8 = 52,Touche_9 = 4A,
 	 */
     //% blockId=IR_descriptif
     //% block="Descriptif en commentaire des codes Infrarouge de la télécommande Mbot"
@@ -134,30 +134,13 @@ namespace maqueen {
      */
 
     //% weight=10
-    //% blockId=IR_read block="read IR key"
+    //% blockId=IR_read block="lire la valeur reçue par infrarouge"
     export function IR_read(): number {
         maqueenInit()
         return getParam()
     }
 
-    /**
-     * Read the version number.
-     */
-
-    //% weight=10
-    //% blockId=IR_read_version block="get product information"
-    export function IR_read_version(): string {
-        maqueenInit()
-        pins.i2cWriteNumber(0x10, 50, NumberFormat.UInt8BE);
-        let dataLen = pins.i2cReadNumber(0x10, NumberFormat.UInt8BE);
-        pins.i2cWriteNumber(0x10, 51, NumberFormat.UInt8BE);
-        let buf = pins.i2cReadBuffer(0x10, dataLen, false);
-        let version = "";
-        for (let index = 0; index < dataLen; index++) {
-            version += String.fromCharCode(buf[index])
-        }
-        return version
-    }
+    
 
     function IR_callback(a: Action): void {
         maqueencb = a
@@ -169,7 +152,7 @@ namespace maqueen {
      * Read ultrasonic sensor.
      */
 
-    //% blockId=ultrasonic_sensor block="read ultrasonic sensor |%unit "
+    //% blockId=ultrasonic_sensor block="lire la valeur du capteur ultrason - unité|%unit"
     //% weight=95
     export function Ultrasonic(unit: PingUnit, maxCmDistance = 500): number {
         let d
@@ -199,7 +182,7 @@ namespace maqueen {
      */
 
     //% weight=90
-    //% blockId=motor_MotorRun block="motor|%index|move|%Dir|at speed|%speed"
+    //% blockId=motor_MotorRun block="Moteur|%index|direction|%Dir|à la vitesse|%speed"
     //% speed.min=0 speed.max=255
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
     //% direction.fieldEditor="gridpicker" direction.fieldOptions.columns=2
@@ -231,7 +214,7 @@ namespace maqueen {
      * Stop the Maqueen motor.
      */
     //% weight=20
-    //% blockId=motor_motorStop block="motor |%motors stop"
+    //% blockId=motor_motorStop block="stopper |%motors"
     //% motors.fieldEditor="gridpicker" motors.fieldOptions.columns=2 
     export function motorStop(motors: Motors): void {
         let buf = pins.createBuffer(3);
@@ -260,11 +243,11 @@ namespace maqueen {
     }
 
     /**
-     * Read line tracking sensor.
+     * lire le détecteur de ligne
      */
 
     //% weight=20
-    //% blockId=read_Patrol block="read |%patrol line tracking sensor"
+    //% blockId=read_Patrol block="Lire le détecteur de ligne |%patrol| (0 - noir et 1 - blanc)"
     //% patrol.fieldEditor="gridpicker" patrol.fieldOptions.columns=2 
     export function readPatrol(patrol: Patrol): number {
         if (patrol == Patrol.PatrolLeft) {
@@ -277,11 +260,11 @@ namespace maqueen {
     }
 
     /**
-     * Turn on/off the LEDs.
+     * LED rouge allumé - éteinte.
      */
 
     //% weight=20
-    //% blockId=writeLED block="LEDlight |%led turn |%ledswitch"
+    //% blockId=writeLED block="LED rouge |%led| action: |%ledswitch"
     //% led.fieldEditor="gridpicker" led.fieldOptions.columns=2 
     //% ledswitch.fieldEditor="gridpicker" ledswitch.fieldOptions.columns=2
     export function writeLED(led: LED,ledswitch: LEDswitch): void {
@@ -295,11 +278,11 @@ namespace maqueen {
     }
 
     /**
-     * Set the Maqueen servos.
+     * Servomoteur S1 et S2.
      */
 
     //% weight=90
-    //% blockId=servo_ServoRun block="servo|%index|angle|%angle"
+    //% blockId=servo_ServoRun block="servomoteur sur: |%index|angle:|%angle"
     //% angle.min=0 angle.max=180
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
     export function servoRun(index: Servos, angle: number): void {
