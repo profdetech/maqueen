@@ -152,7 +152,7 @@ namespace maqueen {
      * Read ultrasonic sensor.
      */
 
-    //% blockId=ultrasonic_sensor block="lire la valeur du capteur ultrason - unité|%unit"
+    //% blockId=ultrasonic_sensor block="lire la valeur du capteur ultrason - unité |%unit "
     //% weight=95
     export function Ultrasonic(unit: PingUnit, maxCmDistance = 500): number {
         let d
@@ -244,10 +244,11 @@ namespace maqueen {
 
     /**
      * lire le détecteur de ligne
+	 * 0 - noir et 1 - blanc
      */
 
     //% weight=20
-    //% blockId=read_Patrol block="Lire le détecteur de ligne |%patrol| (0 - noir et 1 - blanc)"
+    //% blockId=read_Patrol block="Lire le détecteur de ligne |%patrol "
     //% patrol.fieldEditor="gridpicker" patrol.fieldOptions.columns=2 
     export function readPatrol(patrol: Patrol): number {
         if (patrol == Patrol.PatrolLeft) {
@@ -264,7 +265,7 @@ namespace maqueen {
      */
 
     //% weight=20
-    //% blockId=writeLED block="LED rouge |%led| action: |%ledswitch"
+    //% blockId=writeLED block="LED rouge |%led action: |%ledswitch"
     //% led.fieldEditor="gridpicker" led.fieldOptions.columns=2 
     //% ledswitch.fieldEditor="gridpicker" ledswitch.fieldOptions.columns=2
     export function writeLED(led: LED,ledswitch: LEDswitch): void {
