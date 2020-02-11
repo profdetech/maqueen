@@ -103,6 +103,7 @@ namespace maqueen {
     }
 
     //% weight=100
+	//% blockGap=2
     //% blockId=IR_callbackUser block="Quand l'Infrarouge reçoit un signal, écrire dans la variable"
     export function IR_callbackUser(maqueencb: (message: number) => void) {
         maqueenInit();
@@ -134,6 +135,7 @@ namespace maqueen {
      */
 
     //% weight=98
+	//% blockGap=2
     //% blockId=IR_read block="lire la valeur reçue par infrarouge"
     export function IR_read(): number {
         maqueenInit()
@@ -183,6 +185,7 @@ namespace maqueen {
      */
 
     //% weight=90
+	//% blockGap=2
     //% blockId=motor_MotorRun block="Moteur|%index|direction|%Dir|à la vitesse|%speed"
     //% speed.min=0 speed.max=255
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
@@ -250,7 +253,7 @@ namespace maqueen {
      */
 
     //% weight=20
-	//% blockGap=50
+	//% blockGap=2
     //% blockId=read_Patrol block="Lire le détecteur de ligne |%patrol "
     //% patrol.fieldEditor="gridpicker" patrol.fieldOptions.columns=2 
     export function readPatrol(patrol: Patrol): number {
@@ -263,11 +266,62 @@ namespace maqueen {
         }
     }
 
+	/**
+     * renvoie vrai si le détecteur de ligne gauche détecte du noir
+     */
+    //% blockId=Gnoir
+    //% block="Le détecteur de ligne gauche détecte du noir"
+	//% weight=19 blockGap=2
+    export function gnoir(): boolean {
+		 if (pins.digitalReadPin(DigitalPin.P13) == 0) {
+            return true;
+        } else return false;
+    }
+	
+	/**
+     * renvoie vrai si le détecteur de ligne gauche détecte du blanc
+     */
+    //% blockId=Gblanc
+    //% block="Le détecteur de ligne gauche détecte du blanc"
+	//% weight=18 blockGap=2
+    export function gblanc(): boolean {
+		 if (pins.digitalReadPin(DigitalPin.P13) == 1) {
+            return true;
+        } else return false;
+    }
+
+	/**
+     * renvoie vrai si le détecteur de ligne droit détecte du noir
+     */
+    //% blockId=Dnoir
+    //% block="Le détecteur de ligne droit détecte du noir"
+	//% weight=17 blockGap=2
+    export function dnoir(): boolean {
+		 if (pins.digitalReadPin(DigitalPin.P14) == 0) {
+            return true;
+        } else return false;
+    }
+	
+	/**
+     * renvoie vrai si le détecteur de ligne droit détecte du blanc
+     */
+    //% blockId=Dblanc
+    //% block="Le détecteur de ligne droit détecte du blanc"
+	//% weight=16 blockGap=2
+    export function dblanc(): boolean {
+		 if (pins.digitalReadPin(DigitalPin.P14) == 1) {
+            return true;
+        } else return false;
+    }
+
+
+
+
     /**
      * LED rouge allumé - éteinte.
      */
 
-    //% weight=10
+    //% weight=30
 	//% blockGap=50
     //% blockId=writeLED block="LED rouge |%led action: |%ledswitch"
     //% led.fieldEditor="gridpicker" led.fieldOptions.columns=2 
