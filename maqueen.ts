@@ -103,7 +103,7 @@ namespace maqueen {
     }
 
     //% weight=100
-	//% blockGap=2
+	//% blockGap=4
     //% blockId=IR_callbackUser block="Quand l'Infrarouge reçoit un signal, écrire dans la variable"
     export function IR_callbackUser(maqueencb: (message: number) => void) {
         maqueenInit();
@@ -116,16 +116,17 @@ namespace maqueen {
         });
     }
 	/**
-	* A= 45,B= 46,C= 47,D= 44,E= 43,F= D,
-	* Haut = 40,Gauche = 7,Bas = 19,Droite = 9,Parametre = 15,
-	* Touche_0 = 16,Touche_1 = C,Touche_2 = 18,Touche_3 = 5E,
-	* Touche_4 = 8,Touche_5 = 1C,Touche_6 = 5A,Touche_7 = 42,
-	* Touche_8 = 52,Touche_9 = 4A,
+	* Valeur en décimal pour comparer avec la variable message
+	* A= 69,B= 70,C= 71,D= 68,E= 67,F= 13,
+	* Haut= 64,Gauche= 7,Bas = 25,Droite= 9,Parametre= 21,
+	* Touche_0= 22,Touche_1= 12,Touche_2= 24,Touche_3= 94,
+	* Touche_4= 8,Touche_5= 28,Touche_6= 90,Touche_7= 66,
+	* Touche_8= 82,Touche_9= 74,
 	 */
     //% blockId=IR_descriptif
     //% block="Descriptif en commentaire des codes Infrarouge de la télécommande Mbot"
 	//% weight=97
-	//% blockGap=50
+	//% blockGap=30
     export function IR_descriptif(): void {
     }
 	
@@ -156,7 +157,7 @@ namespace maqueen {
 
     //% blockId=ultrasonic_sensor block="lire la valeur du capteur ultrason - unité |%unit "
     //% weight=95
-	//% blockGap=50
+	//% blockGap=30
     export function Ultrasonic(unit: PingUnit, maxCmDistance = 500): number {
         let d
         pins.digitalWritePin(DigitalPin.P1, 0);
@@ -185,7 +186,7 @@ namespace maqueen {
      */
 
     //% weight=90
-	//% blockGap=2
+	//% blockGap=4
     //% blockId=motor_MotorRun block="Moteur|%index|direction|%Dir|à la vitesse|%speed"
     //% speed.min=0 speed.max=255
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
@@ -218,7 +219,7 @@ namespace maqueen {
      * Stop the Maqueen motor.
      */
     //% weight=89
-	//% blockGap=50
+	//% blockGap=30
     //% blockId=motor_motorStop block="stopper |%motors"
     //% motors.fieldEditor="gridpicker" motors.fieldOptions.columns=2 
     export function motorStop(motors: Motors): void {
@@ -253,7 +254,7 @@ namespace maqueen {
      */
 
     //% weight=20
-	//% blockGap=2
+	//% blockGap=4
     //% blockId=read_Patrol block="Lire le détecteur de ligne |%patrol "
     //% patrol.fieldEditor="gridpicker" patrol.fieldOptions.columns=2 
     export function readPatrol(patrol: Patrol): number {
@@ -271,7 +272,7 @@ namespace maqueen {
      */
     //% blockId=Gnoir
     //% block="Le détecteur de ligne gauche détecte du noir"
-	//% weight=19 blockGap=2
+	//% weight=19 blockGap=4
     export function gnoir(): boolean {
 		 if (pins.digitalReadPin(DigitalPin.P13) == 0) {
             return true;
@@ -283,7 +284,7 @@ namespace maqueen {
      */
     //% blockId=Gblanc
     //% block="Le détecteur de ligne gauche détecte du blanc"
-	//% weight=18 blockGap=2
+	//% weight=18 blockGap=4
     export function gblanc(): boolean {
 		 if (pins.digitalReadPin(DigitalPin.P13) == 1) {
             return true;
@@ -295,7 +296,7 @@ namespace maqueen {
      */
     //% blockId=Dnoir
     //% block="Le détecteur de ligne droit détecte du noir"
-	//% weight=17 blockGap=2
+	//% weight=17 blockGap=4
     export function dnoir(): boolean {
 		 if (pins.digitalReadPin(DigitalPin.P14) == 0) {
             return true;
@@ -307,7 +308,7 @@ namespace maqueen {
      */
     //% blockId=Dblanc
     //% block="Le détecteur de ligne droit détecte du blanc"
-	//% weight=16 blockGap=2
+	//% weight=16 blockGap=4
     export function dblanc(): boolean {
 		 if (pins.digitalReadPin(DigitalPin.P14) == 1) {
             return true;
@@ -322,7 +323,7 @@ namespace maqueen {
      */
 
     //% weight=30
-	//% blockGap=50
+	//% blockGap=30
     //% blockId=writeLED block="LED rouge |%led action: |%ledswitch"
     //% led.fieldEditor="gridpicker" led.fieldOptions.columns=2 
     //% ledswitch.fieldEditor="gridpicker" ledswitch.fieldOptions.columns=2
@@ -341,7 +342,7 @@ namespace maqueen {
      */
 
     //% weight=70
-	//% blockGap=50
+	//% blockGap=30
     //% blockId=servo_ServoRun block="servomoteur sur: |%index|angle:|%angle"
     //% angle.min=0 angle.max=180
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
