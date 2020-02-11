@@ -103,7 +103,6 @@ namespace maqueen {
     }
 
     //% weight=100
-    //% blockGap=50
     //% blockId=IR_callbackUser block="Quand l'Infrarouge reçoit un signal, écrire dans la variable"
     export function IR_callbackUser(maqueencb: (message: number) => void) {
         maqueenInit();
@@ -124,7 +123,8 @@ namespace maqueen {
 	 */
     //% blockId=IR_descriptif
     //% block="Descriptif en commentaire des codes Infrarouge de la télécommande Mbot"
-	//% weight=10
+	//% weight=97
+	//% blockGap=50
     export function IR_descriptif(): void {
     }
 	
@@ -133,7 +133,7 @@ namespace maqueen {
      * Read IR sensor value.
      */
 
-    //% weight=10
+    //% weight=98
     //% blockId=IR_read block="lire la valeur reçue par infrarouge"
     export function IR_read(): number {
         maqueenInit()
@@ -154,6 +154,7 @@ namespace maqueen {
 
     //% blockId=ultrasonic_sensor block="lire la valeur du capteur ultrason - unité |%unit "
     //% weight=95
+	//% blockGap=50
     export function Ultrasonic(unit: PingUnit, maxCmDistance = 500): number {
         let d
         pins.digitalWritePin(DigitalPin.P1, 0);
@@ -213,7 +214,8 @@ namespace maqueen {
     /**
      * Stop the Maqueen motor.
      */
-    //% weight=20
+    //% weight=89
+	//% blockGap=50
     //% blockId=motor_motorStop block="stopper |%motors"
     //% motors.fieldEditor="gridpicker" motors.fieldOptions.columns=2 
     export function motorStop(motors: Motors): void {
@@ -248,6 +250,7 @@ namespace maqueen {
      */
 
     //% weight=20
+	//% blockGap=50
     //% blockId=read_Patrol block="Lire le détecteur de ligne |%patrol "
     //% patrol.fieldEditor="gridpicker" patrol.fieldOptions.columns=2 
     export function readPatrol(patrol: Patrol): number {
@@ -264,7 +267,8 @@ namespace maqueen {
      * LED rouge allumé - éteinte.
      */
 
-    //% weight=20
+    //% weight=10
+	//% blockGap=50
     //% blockId=writeLED block="LED rouge |%led action: |%ledswitch"
     //% led.fieldEditor="gridpicker" led.fieldOptions.columns=2 
     //% ledswitch.fieldEditor="gridpicker" ledswitch.fieldOptions.columns=2
@@ -282,7 +286,8 @@ namespace maqueen {
      * Servomoteur S1 et S2.
      */
 
-    //% weight=90
+    //% weight=70
+	//% blockGap=50
     //% blockId=servo_ServoRun block="servomoteur sur: |%index|angle:|%angle"
     //% angle.min=0 angle.max=180
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=2
