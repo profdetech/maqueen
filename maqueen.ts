@@ -104,7 +104,7 @@ namespace maqueen {
 
     //% weight=100
 	//% blockGap=4
-    //% blockId=IR_callbackUser block="Quand l'Infrarouge reçoit un signal, écrire dans la variable"
+    //% blockId=IR_callbackUser block="Quand le capteur infrarouge reçoit un signal, écrire dans la variable"
     export function IR_callbackUser(maqueencb: (message: number) => void) {
         maqueenInit();
         IR_callback(() => {
@@ -132,7 +132,7 @@ namespace maqueen {
 	
 	
     /**
-     * Read IR sensor value.
+     * Retourne la dernière valeur infrarouge reçue
      */
 
     //% weight=98
@@ -152,7 +152,7 @@ namespace maqueen {
     }
 
     /**
-     * Read ultrasonic sensor.
+     * Renvoie la valeur du capteur à ultrason  (0 si hors de portée)
      */
 
     //% blockId=ultrasonic_sensor block="lire la valeur du capteur ultrason - unité |%unit "
@@ -182,7 +182,7 @@ namespace maqueen {
     }
 
     /**
-     * Set the direction and speed of Maqueen motor.
+     * Régler les moteurs du robot maqueen.
      */
 
     //% weight=90
@@ -216,7 +216,7 @@ namespace maqueen {
     }
 
     /**
-     * Stop the Maqueen motor.
+     * Stopper les moteurs du robot maqueen.
      */
     //% weight=89
 	//% blockGap=30
@@ -250,7 +250,8 @@ namespace maqueen {
 
     /**
      * lire le détecteur de ligne
-	 * 0 - noir et 1 - blanc
+	 * renvoie 0 si c'est noir
+	 * renvoie 1 si c'est blanc
      */
 
     //% weight=20
@@ -319,7 +320,7 @@ namespace maqueen {
 
 
     /**
-     * LED rouge allumé - éteinte.
+     * LED rouge gauche ou droite -  allumé ou éteinte.
      */
 
     //% weight=30
