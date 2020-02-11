@@ -1,10 +1,11 @@
 {
     "name": "maqueen",
-    "version": "1.2.3",
-    "description": "Affordable mini robot designed by DFRobot",
+    "version": "1.3.3",
+    "description": "Fork by M. MOURONVAL",
     "license": "MIT",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+		"neopixel": "github:profdetech/pxt-neopixel",
     },
     "files": [
         "maqueen.ts",
